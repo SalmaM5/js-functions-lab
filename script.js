@@ -60,15 +60,11 @@ Complete the exercise in the space below:
 */
 
 const isCharAVowel = (character) => {
-
-  if (character === 'a' || 'e' || 'i' || 'o' || 'u') {
-
+  if (character === 'a' || character === 'e' || character === 'i' || character === 'o' || character === 'u') {
     return true;
-  }
-
-  else
+  } else {
     return false;
-
+  }
 }
 
 
@@ -166,8 +162,8 @@ Complete the exercise in the space below:
 
 const calculateTip = (bill, tip) => {
 
-  calculate = tip - 10;
-  return calculate;
+  return (bill * tip) / 100;
+ 
 
 }
 
@@ -194,14 +190,10 @@ Complete the exercise in the space below:
 const convertTemperature = (num, tem) => {
 
   if (tem === 'C') {
-
-    return "89.6 (Fahrenheit)";
+    return (num * 9/5) + 32; 
+  } else if (tem === 'F') {
+    return (num - 32) * 5/9; 
   }
-
-  else if (tem === 'F') {
-    return "0 (Celsius)";
-  }
-
 }
 
 console.log('Exercise 8 Result:', convertTemperature(32, "C"));
@@ -318,7 +310,11 @@ Complete the exercise in the space below:
 
 
 const createUsername=(FirstName , LastName)=>{
-
+  const firstThreeLetters = FirstName.slice(0, 3);
+  const lastThreeLetters = LastName.slice(0, 3);
+  const totalLength = FirstName.length + LastName.length;
+  
+  return firstThreeLetters + lastThreeLetters + totalLength;
      
 
    }
@@ -340,10 +336,8 @@ This function should return the count of arguments passed to it when called.
 Complete the exercise in the space below:
 */
 
-const numArgs = () => {
-      if(numArgs.length>0){
-        return numArgs;
-      }
+const numArgs = (...args) => {
+  return args.length;
 }
 
 console.log('Exercise 12 Result:', numArgs(1, 2, 3, 4));
